@@ -37,7 +37,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const startedToken = tokenStore.get();
     // Always ask the server: the session is in an HttpOnly cookie.
     api.me()
-      .then((u) => { if (tokenStore.get() === startedToken) { tokenStore.set("cookie-session"); setUser(u); } })
+      .then((u) => { if (tokenStore.get() === startedToken) { setUser(u); } })
       .catch(() => { /* 401 already cleared the session; network errors keep the token */ })
       .finally(() => setLoading(false));
   }, []);
