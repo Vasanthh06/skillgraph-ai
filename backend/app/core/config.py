@@ -1,7 +1,6 @@
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 INSECURE_DEFAULT_SECRET = "change-me-in-env"
@@ -13,7 +12,6 @@ INSECURE_DEFAULT_SECRET = "change-me-in-env"
 # obvious places (real OS environment variables still take precedence over all of them).
 _BACKEND_DIR = Path(__file__).resolve().parents[2]  # app/core/config.py -> backend/
 _ENV_FILES = (".env", str(_BACKEND_DIR / ".env"), str(_BACKEND_DIR.parent / ".env"))
-_REPO_ROOT = _BACKEND_DIR.parent  # project root
 
 
 class Settings(BaseSettings):
@@ -41,18 +39,6 @@ class Settings(BaseSettings):
     RATE_LIMIT_ENABLED: bool = True
     AUTH_RATE_LIMIT: int = 10  # requests per window per client
     AUTH_RATE_WINDOW_SECONDS: int = 60
-
-    @field_validator("DATABASE_URL")
-    @classmethod
-    def _resolve_sqlite_path(cls, v: str) -> str:
-        """Anchor relative sqlite:/// paths to the repo root, not the process CWD."""
-        if not v.startswith("sqlite:///"):
-            return v
-        path_part = v[len("sqlite:///"):]
-        if path_part.startswith("/") or (len(path_part) >= 2 and path_part[1] == ":"):
-            return v
-        abs_path = (_REPO_ROOT / path_part).resolve()
-        return f"sqlite:///{abs_path.as_posix()}"
 
     @property
     def cors_origin_list(self) -> list[str]:

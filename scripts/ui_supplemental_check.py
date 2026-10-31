@@ -34,7 +34,9 @@ with sync_playwright() as p:
         assert connection.execute('SELECT email FROM users WHERE id=?',(uid,)).fetchone()[0]==email
         connection.execute('UPDATE account_security SET is_admin=1 WHERE user_id=?',(uid,))
     for theme in ['light','dark']:
-        page.goto(BASE+'/admin');page.get_by_role('button',name=theme.title()+' theme',exact=True).click()
+        page.goto(BASE+'/admin')
+        if page.locator('html').get_attribute('data-theme') != theme:
+            page.get_by_role('switch',name='Dark mode',exact=True).click()
         page.get_by_role('heading',name='Account administration').wait_for()
         page.get_by_label('Search names').fill('Synthetic Administrator')
         page.wait_for_timeout(300)

@@ -21,7 +21,7 @@
     {
       "path": "README.md",
       "sha256": "285cd3084d98520e7db97a30937cad66e78f184da9223943acb50c49d12c9f0c",
-      "updated_sha256": "ae78bb2731f25b37325af1404a229f634d4b8ab930697f9f6c83e8a29956be24",
+      "updated_sha256": "b9db10f52d3de3aa2a513afe0bc3a709245ce0b360d5b4eab6597ea6130dab39",
       "status": "modified-original-backed-up"
     },
     {
@@ -723,7 +723,7 @@
     {
       "path": "frontend/src/index.css",
       "sha256": "87a7d6e0c60b52379acd5059a6b02166767716065f952af0429601e9e94c8036",
-      "updated_sha256": "f20109d6ec07c4ad273e5ae0c179542108d8939f8124a521407988b36459cbf6",
+      "updated_sha256": "921cffe1ea71694776a0b62c3774d3bb5c3865d7bb5b951ad425155f1adbd9bc",
       "status": "modified-original-backed-up"
     },
     {
@@ -1538,8 +1538,10 @@
     }
   ],
   "added_files": [
+    "docs/THEME_TOGGLE_FIX.md",
     "docs/UI_ENHANCEMENT_REPORT.md",
     "docs/UI_IMPLEMENTATION_PLAN.md",
+    "docs/ui-evidence/archive-preservation-verification.json",
     "docs/ui-evidence/axe-results-initial.json",
     "docs/ui-evidence/axe-results.json",
     "docs/ui-evidence/browser-results-initial.json",
@@ -1575,14 +1577,26 @@
     "docs/ui-evidence/screenshots/skill-graph-dark-mobile.png",
     "docs/ui-evidence/screenshots/skill-graph-light-desktop.png",
     "docs/ui-evidence/screenshots/skill-graph-light-mobile.png",
+    "docs/ui-evidence/screenshots/toggle-fix-1440.png",
+    "docs/ui-evidence/screenshots/toggle-fix-390.png",
     "docs/ui-evidence/supplemental-results.json",
     "docs/ui-evidence/supplemental-run.txt",
+    "docs/ui-evidence/toggle-build.txt",
+    "docs/ui-evidence/toggle-regression.txt",
+    "docs/ui-evidence/toggle-results.json",
     "docs/ui-evidence/typecheck.txt",
     "frontend/src/components/HistoryControls.tsx",
     "frontend/src/components/IllustrativeGraph.tsx",
     "frontend/src/components/ThemeToggle.tsx",
     "frontend/src/store/navigation.tsx",
     "frontend/src/store/theme.tsx",
+    "preservation/UI_CHANGELOG.json",
+    "preservation/pre-toggle-files/frontend/src/components/ThemeToggle.tsx",
+    "preservation/pre-toggle-files/frontend/src/index.css",
+    "preservation/pre-toggle-files/scripts/ui_browser_check.py",
+    "preservation/pre-toggle-files/scripts/ui_supplemental_check.py",
+    "preservation/ui-input-inventory.json",
+    "scripts/toggle_browser_check.py",
     "scripts/ui_browser_check.py",
     "scripts/ui_supplemental_check.py",
     "tests/test_ui_contracts.py"

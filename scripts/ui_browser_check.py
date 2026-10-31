@@ -23,10 +23,14 @@ with sync_playwright() as p:
     page.on('pageerror',lambda e:errors.append(str(e)))
     def ready(path):
         page.goto(BASE+path)
-        page.get_by_role('group',name='Color theme',exact=True).wait_for()
+        page.get_by_role('switch',name='Dark mode',exact=True).wait_for()
         page.wait_for_timeout(160)
     def theme(name):
-        page.get_by_role('button',name=name.title()+' theme',exact=True).click()
+        if name == 'system':
+            page.evaluate("localStorage.removeItem('sg_theme')")
+            page.reload()
+        elif page.locator('html').get_attribute('data-theme') != name:
+            page.get_by_role('switch',name='Dark mode',exact=True).click()
         expected=name if name!='system' else 'light'
         page.wait_for_function('(v)=>document.documentElement.dataset.theme===v',arg=expected)
     def shot(name):

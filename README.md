@@ -1,3 +1,11 @@
+# Latest correction: single theme toggle + overlap fix
+
+The shared header now has **one Light/Dark switch**. The tagline and three-option selector were removed as requested. The graph callout sits below the card instead of covering its explanatory text. Your preference still persists; a fresh browser follows the OS until you choose a theme.
+
+Verified: production build passed; **228 regression tests passed**; **16 viewport/theme checks** at all eight widths passed (no overflow or callout overlap), keyboard switching and refresh persistence passed, sampled login axe scan detected no violations. Latest screenshots: `docs/ui-evidence/screenshots/toggle-fix-1440.png` and `toggle-fix-390.png`. Previous reports/screenshots below describe earlier revisions.
+
+---
+
 # SkillGraph AI — Premium UI revision
 
 A cohesive Light/Dark/System workspace, a product-focused landing experience and safer in-app navigation—implemented on the existing application, not a replacement.
