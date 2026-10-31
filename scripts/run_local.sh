@@ -16,7 +16,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 if [ ! -f .env ]; then
-  SECRET="$(python3 -c 'import secrets; print(secrets.token_urlsafe(48))')"
+  SECRET="$(python -c 'import secrets; print(secrets.token_urlsafe(48))')"
   cat > .env <<EOF
 DEMO_MODE=false
 SECRET_KEY=${SECRET}
@@ -32,9 +32,9 @@ mkdir -p data backend/uploads
 set -a; . ./.env; set +a
 export PYTHONPATH="${ROOT}/backend"
 
-python3 -c 'import fastapi' >/dev/null 2>&1 || pip install -r backend/requirements.txt
-python3 scripts/init_db.py
-python3 scripts/migrate_db.py   # upgrades an existing database in place (no-op when current)
+python -c 'import fastapi' >/dev/null 2>&1 || pip install -r backend/requirements.txt
+python scripts/init_db.py
+python scripts/migrate_db.py   # upgrades an existing database in place (no-op when current)
 
 if [ ! -d frontend/node_modules ]; then
   (cd frontend && (npm ci || npm install))
