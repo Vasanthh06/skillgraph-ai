@@ -43,7 +43,7 @@ async function request<T>(path: string, init: RequestInit = {}, auth = true): Pr
 
   let res: Response;
   try {
-    res = await fetch(`${API_URL}${path}`, { ...init, headers, credentials: "same-origin" });
+    res = await fetch(`${API_URL}${path}`, { ...init, headers, credentials: "include" });
   } catch {
     throw new ApiError(0, "Can't reach the server. Check that the backend is running.");
   }
