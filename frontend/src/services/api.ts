@@ -10,7 +10,7 @@ export const API_URL: string = import.meta.env.VITE_API_URL ?? "/api";
 let memoryToken: string | null = null;
 export const tokenStore = {
   get: () => memoryToken,
-  set: (_t: string) => { memoryToken = "cookie-session"; },
+  set: (t: string) => { memoryToken = t; },
   clear: () => { memoryToken = null; },
 };
 
@@ -39,6 +39,7 @@ async function request<T>(path: string, init: RequestInit = {}, auth = true): Pr
   const headers = new Headers(init.headers);
   if (!(init.body instanceof FormData) && init.body) headers.set("Content-Type", "application/json");
   const token = tokenStore.get();
+  if (token) headers.set("Authorization", `Bearer ${token}`);
   headers.set("X-Requested-With", "SkillGraph");
 
   let res: Response;
