@@ -62,3 +62,6 @@ def create_app() -> FastAPI:
         return JSONResponse(status_code=500, content={"detail": "Something went wrong on our side."})
 
     return app
+
+
+app = create_app()
