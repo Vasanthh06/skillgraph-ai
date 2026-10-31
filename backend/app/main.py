@@ -19,23 +19,7 @@ def create_app() -> FastAPI:
     s.assert_secure()
     app = FastAPI(title=s.APP_NAME, version="0.1.0")
 
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=s.cors_origin_list,
-        allow_credentials=False,  # bearer tokens, no cookies
-        allow_methods=["GET", "POST", "PUT", "DELETE"],
-        allow_headers=["Authorization", "Content-Type", "X-Auth-Token", "X-Requested-With"],
-    )
-
-    routers = (account.router, auth.router, profile.router, mc.roles_router, mc.assessment_router, mc.resume_router, mc.skills_router, mc.gap_router,
-               mp.roadmap_router, mp.learn_router, mp.jobs_router, mp.interview_router, mp.reco_router)
-    for r in routers:
-        app.include_router(r)
-        app.include_router(r, prefix="/api", include_in_schema=False)  # /api/profile, /api/skill-gap, /api/resume/upload, ...
-    app.include_router(mp.dash_router)  # already serves both /dashboard and /api/dashboard
-
-    (Path(s.UPLOAD_DIR) / "photos").mkdir(parents=True, exist_ok=True)  # NOT mounted: files are served only via authenticated endpoints
-
+    # 1. Add security_headers FIRST (so CORS runs outermost)
     @app.middleware("http")
     async def security_headers(request: Request, call_next):
         response = await call_next(request)
@@ -44,6 +28,24 @@ def create_app() -> FastAPI:
         response.headers["Cache-Control"] = "no-store"
         response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
         return response
+
+    # 2. Add CORS LAST (so it's the outermost layer and handles preflight first)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["https://skillgraph-frontend-ymhr.onrender.com"],
+        allow_credentials=True,
+        allow_methods=["GET", "POST", "PUT", "DELETE"],
+        allow_headers=["Authorization", "Content-Type", "X-Auth-Token", "X-Requested-With"],
+    )
+
+    routers = (account.router, auth.router, profile.router, mc.roles_router, mc.assessment_router, mc.resume_router, mc.skills_router, mc.gap_router,
+               mp.roadmap_router, mp.learn_router, mp.jobs_router, mp.interview_router, mp.reco_router)
+    for r in routers:
+        app.include_router(r)
+        app.include_router(r, prefix="/api", include_in_schema=False)
+    app.include_router(mp.dash_router)
+
+    (Path(s.UPLOAD_DIR) / "photos").mkdir(parents=True, exist_ok=True)
 
     @app.get("/health", tags=["meta"])
     def health():
@@ -60,6 +62,3 @@ def create_app() -> FastAPI:
         return JSONResponse(status_code=500, content={"detail": "Something went wrong on our side."})
 
     return app
-
-
-app = create_app()
