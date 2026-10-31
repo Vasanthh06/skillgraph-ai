@@ -1,0 +1,420 @@
+............................................F.....FF.................... [ 34%]
+.....................................................F.F.F.F.....F...... [ 68%]
+........F..FF................FF............F.F..F.F........F.....        [100%]
+=================================== FAILURES ===================================
+___________________________ test_password_is_hashed ____________________________
+
+client = <starlette.testclient.TestClient object at 0x7f30be5cdbf0>
+registered = {'access_token': '[REDACTED_SYNTHETIC_JWT]:00', 'user': {'id': '9f44e198-f922-4710-89e4-3859037c84b2', 'full_name': 'Rahul Kumar', 'email': 'rahul@example.com'}}
+
+    def test_password_is_hashed(client, registered):
+        from app.main import app
+        from app.core.database import get_db
+        from app.models import User
+    
+        db = next(app.dependency_overrides[get_db]())
+        u = db.query(User).one()
+        assert u.hashed_password != REGISTER["password"]
+>       assert u.hashed_password.startswith("$2")
+E       AssertionError: assert False
+E        +  where False = <built-in method startswith of str object at 0x7f30bb9f4d20>('$2')
+E        +    where <built-in method startswith of str object at 0x7f30bb9f4d20> = '$argon2id$v=19$m=65536,t=3,p=2$VENFZOOwnX7LAR9Qzau6Pw$3cJEQEgCsK0se7O40qkzkujdKG+vrKW4RfR/yZG4hTY'.startswith
+E        +      where '$argon2id$v=19$m=65536,t=3,p=2$VENFZOOwnX7LAR9Qzau6Pw$3cJEQEgCsK0se7O40qkzkujdKG+vrKW4RfR/yZG4hTY' = <app.models.user.User object at 0x7f30bb8a8050>.hashed_password
+
+tests/test_auth.py:46: AssertionError
+_______ test_auth_accepts_fallback_header_when_authorization_is_unusable _______
+
+client = <starlette.testclient.TestClient object at 0x7f30be5ce250>
+registered = {'access_token': '[REDACTED_SYNTHETIC_JWT]:00', 'user': {'id': 'a6ec6705-e0ae-4560-aabb-2bc083ae7f88', 'full_name': 'Rahul Kumar', 'email': 'rahul@example.com'}}
+
+    def test_auth_accepts_fallback_header_when_authorization_is_unusable(client, registered):
+        # Regression (real preview session): POST /auth/login -> 200, then GET /dashboard+/profile
+        # -> 401, bouncing the browser back to /login -- the Authorization header was unusable on
+        # the follow-up requests in that proxied path, while the same flow worked locally. The app
+        # now also sends X-Auth-Token and the backend accepts the first credential that verifies.
+        token = registered["access_token"]
+        assert client.get("/profile", headers={"X-Auth-Token": token}).status_code == 200
+        clobbered = {"Authorization": "Bearer not-the-app-token", "X-Auth-Token": token}
+        assert client.get("/profile", headers=clobbered).status_code == 200
+        assert client.get("/dashboard", headers=clobbered).status_code == 200
+        # ...but garbage everywhere (or nothing) is still rejected.
+        assert client.get("/profile", headers={"Authorization": "Bearer no", "X-Auth-Token": "no"}).status_code == 401
+>       assert client.get("/profile").status_code == 401
+E       AssertionError: assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+E        +    where <Response [200 OK]> = get('/profile')
+E        +      where get = <starlette.testclient.TestClient object at 0x7f30be5ce250>.get
+
+tests/test_auth.py:96: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  skillgraph.auth:deps.py:60 auth: GET /profile authenticated via x-auth-token fallback (Authorization unusable: missing)
+WARNING  skillgraph.auth:deps.py:60 auth: GET /profile authenticated via x-auth-token fallback (Authorization unusable: authorization: DecodeError (len=17))
+WARNING  skillgraph.auth:deps.py:60 auth: GET /dashboard authenticated via x-auth-token fallback (Authorization unusable: authorization: DecodeError (len=17))
+WARNING  skillgraph.auth:deps.py:64 auth: 401 for GET /profile -- authorization: DecodeError (len=2); x-auth-token: DecodeError (len=2) [authorization present=True, x-auth-token present=True]
+WARNING  skillgraph.auth:deps.py:60 auth: GET /profile authenticated via cookie fallback (Authorization unusable: missing)
+_______________ test_rate_limit_buckets_are_per_forwarded_client _______________
+
+client = <starlette.testclient.TestClient object at 0x7f30be9339b0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f30bebd3bb0>
+
+    def test_rate_limit_buckets_are_per_forwarded_client(client, monkeypatch):
+        # Regression: behind the Vite/reverse proxy every visitor arrives as 127.0.0.1, so keying
+        # the limiter on request.client.host put all users in ONE bucket. Each X-Forwarded-For
+        # client must get its own bucket.
+        s = get_settings()
+        monkeypatch.setattr(s, "RATE_LIMIT_ENABLED", True)
+        monkeypatch.setattr(s, "AUTH_RATE_LIMIT", 3)
+        one = {"x-forwarded-for": "203.0.113.1"}
+        codes = [client.post("/auth/login", json={"email": "a@b.co", "password": "x"}, headers=one).status_code for _ in range(4)]
+        assert codes == [401, 401, 401, 429]
+        other = client.post("/auth/login", json={"email": "a@b.co", "password": "x"}, headers={"x-forwarded-for": "203.0.113.2"})
+>       assert other.status_code == 401  # a different forwarded client is not locked out
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 429 == 401
+E        +  where 429 = <Response [429 Too Many Requests]>.status_code
+
+tests/test_auth.py:110: AssertionError
+____________ test_check_endpoints_validate_skill_questions_and_auth ____________
+
+client = <starlette.testclient.TestClient object at 0x7f30be930490>
+auth = {'Authorization': 'Bearer [REDACTED_SYNTHETIC_JWT]'}
+
+    def test_check_endpoints_validate_skill_questions_and_auth(client, auth):
+        _setup(client, auth)
+>       assert client.post("/interview/check/start", json={"skill": "python"}).status_code == 401
+E       AssertionError: assert 403 == 401
+E        +  where 403 = <Response [403 Forbidden]>.status_code
+E        +    where <Response [403 Forbidden]> = post('/interview/check/start', json={'skill': 'python'})
+E        +      where post = <starlette.testclient.TestClient object at 0x7f30be930490>.post
+
+tests/test_intelligence.py:200: AssertionError
+_________ test_migration_upgrades_an_old_database_without_losing_data __________
+
+    def test_migration_upgrades_an_old_database_without_losing_data():
+        engine = create_engine("sqlite://")
+        with engine.begin() as c:
+            c.execute(text("CREATE TABLE users (id VARCHAR(36) PRIMARY KEY)"))
+            c.execute(text("CREATE TABLE skills (id INTEGER PRIMARY KEY)"))
+            c.execute(text("INSERT INTO users VALUES ('u1')"))
+            c.execute(text("INSERT INTO skills VALUES (1)"))
+            c.execute(text("CREATE TABLE user_skills (id INTEGER PRIMARY KEY, user_id VARCHAR(36), skill_id INTEGER, "
+                           "score FLOAT, level VARCHAR(20), confidence FLOAT, created_at TIMESTAMP, updated_at TIMESTAMP)"))
+            c.execute(text("CREATE TABLE user_skill_assessments (id INTEGER PRIMARY KEY, user_id VARCHAR(36), skill_id INTEGER, "
+                           "self_level VARCHAR(20), checklist JSON, test_score FLOAT, created_at TIMESTAMP, updated_at TIMESTAMP)"))
+            c.execute(text("CREATE TABLE interview_attempts (id INTEGER PRIMARY KEY, user_id VARCHAR(36), question_id INTEGER, "
+                           "answer TEXT, score FLOAT, created_at TIMESTAMP, updated_at TIMESTAMP)"))
+            c.execute(text("CREATE TABLE user_progress (id INTEGER PRIMARY KEY, user_id VARCHAR(36), skill_id INTEGER, "
+                           "item_type VARCHAR(20), item_id INTEGER, completed BOOLEAN, created_at TIMESTAMP, updated_at TIMESTAMP)"))
+            c.execute(text("INSERT INTO user_skill_assessments VALUES (1,'u1',1,'beginner','{\"Loops\": true}',NULL,'2024-01-01','2024-01-01')"))
+            c.execute(text("INSERT INTO user_skill_assessments VALUES (2,'u1',1,'advanced',NULL,70,'2024-02-01','2024-02-01')"))
+            c.execute(text("INSERT INTO user_progress VALUES (1,'u1',1,'resource',0,1,'2024-02-01','2024-02-02')"))
+            c.execute(text("INSERT INTO interview_attempts VALUES (1,'u1',1,'x',50,'2024-02-01','2024-02-01')"))
+    
+>       actions = migrate_intelligence(engine)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_intelligence.py:246: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/app/core/migrations.py:108: in migrate_intelligence
+    n = _dedupe_assessments(conn)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+conn = <sqlalchemy.engine.base.Connection object at 0x7f30bb963950>
+
+    def _dedupe_assessments(conn) -> int:
+        """Merge duplicate (user, skill) assessment rows so the unique index can be created safely."""
+        merged = 0
+        pairs = conn.execute(text(
+            "SELECT user_id, skill_id FROM user_skill_assessments GROUP BY user_id, skill_id HAVING COUNT(*) > 1")).all()
+        if pairs:
+>           raise RuntimeError("Duplicate assessments found; migration stopped without deleting records. Back up and obtain operator approval for a merge plan.")
+E           RuntimeError: Duplicate assessments found; migration stopped without deleting records. Back up and obtain operator approval for a merge plan.
+
+backend/app/core/migrations.py:43: RuntimeError
+____________ test_no_where_clause_hand_filters_user_id_in_handlers _____________
+
+    def test_no_where_clause_hand_filters_user_id_in_handlers():
+        bad = [p.name for p, s in sources("api", "services") if re.search(r"\.user_id\s*==", s)]
+>       assert not bad, f"hand-written user_id filters found (use UserScope): {bad}"
+E       AssertionError: hand-written user_id filters found (use UserScope): ['account.py']
+E       assert not ['account.py']
+
+tests/test_isolation_static.py:31: AssertionError
+______________ test_every_user_owned_table_has_an_indexed_user_fk ______________
+
+    def test_every_user_owned_table_has_an_indexed_user_fk():
+        text = "\n".join(p.read_text() for p in (APP / "models").glob("*.py"))
+        blocks = re.split(r"\nclass ", text)
+        owned = {}
+        for b in blocks:
+            m = re.match(r"(\w+)\(", b)
+            if m and re.search(r"^\s+user_id: Mapped", b, re.M):
+                owned[m.group(1)] = b
+        assert set(USER_OWNED) - {"Evidence", "SearchHistory", "UserEmbedding"} <= set(owned) | {"UserActivity"}, set(owned)
+        for name, body in owned.items():
+            line = next(l for l in body.splitlines() if re.match(r"\s+user_id:", l))
+>           assert 'ForeignKey("users.id"' in line and 'ondelete="CASCADE"' in line, f"{name}.user_id must cascade from users.id"
+E           AssertionError: AccountSecurity.user_id must cascade from users.id
+E           assert ('ForeignKey("users.id"' in '    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), primary_key=True)' and 'ondelete="CASCADE"' in '    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), primary_key=True)')
+
+tests/test_isolation_static.py:50: AssertionError
+__________________ test_browser_storage_holds_only_the_token ___________________
+
+    def test_browser_storage_holds_only_the_token():
+        uses = {}
+        for p in (ROOT / "frontend" / "src").rglob("*.ts*"):
+            for m in re.finditer(r"(localStorage|sessionStorage|indexedDB)\.\w+\(([^)]*)\)", p.read_text()):
+                uses.setdefault(p.name, []).append(m.group(0))
+        flat = [u for v in uses.values() for u in v]
+>       assert flat and all("TOKEN_KEY" in u for u in flat), uses
+E       AssertionError: {}
+E       assert ([])
+
+tests/test_isolation_static.py:96: AssertionError
+___________________ test_internal_links_point_at_real_routes ___________________
+
+    def test_internal_links_point_at_real_routes():
+        routes = set(re.findall(r'path="(/[\w-]+)"', _fe("App.tsx"))) | {"/login", "/register", "/"}
+        bad = set()
+        for f in FE.rglob("*.tsx"):
+            for m in re.finditer(r'(?:to=|nav\()["`{(]*"?`?(/[\w-]+)', f.read_text()):
+                if m.group(1) not in routes:
+                    bad.add((f.name, m.group(1)))
+>       assert not bad, bad
+E       AssertionError: {('Login.tsx', '/account')}
+E       assert not {('Login.tsx', '/account')}
+
+tests/test_isolation_static.py:245: AssertionError
+________________ test_motion_respects_reduced_motion_everywhere ________________
+
+    def test_motion_respects_reduced_motion_everywhere():
+        css = _fe("index.css")
+        block = css[css.rindex("@media (prefers-reduced-motion: reduce)"):]
+>       assert "animation: none !important" in block and "transition: none !important" in block
+E       AssertionError: assert ('animation: none !important' in '@media (prefers-reduced-motion: reduce) {\n  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }\n}\n')
+
+tests/test_isolation_static.py:268: AssertionError
+_______________ test_real_results_are_never_artificially_delayed _______________
+
+    def test_real_results_are_never_artificially_delayed():
+        """Timers are allowed only for presentation (toast expiry, draw-in, scan reveal, milestone celebration), never to hold back data."""
+        allowed = {"store/notice.tsx", "components/SkillGraphView.tsx", "components/ResumePanel.tsx", "pages/Roadmap.tsx"}
+        users = {str(f.relative_to(FE)).replace("\\", "/") for f in FE.rglob("*.ts*") if re.search(r"\bset(Timeout|Interval)\(", f.read_text())}
+        assert users <= allowed, f"unexpected timers in: {sorted(users - allowed)}"
+        scan = _fe("components/ResumePanel.tsx")
+        assert "Skip animation" in scan and "1800" in scan, "the scan must be skippable and short"
+        assert "Rule-based, from your evidence" in _fe("pages/Dashboard.tsx"), "AI insights must be labelled honestly"
+        for f in FE.rglob("*.tsx"):
+>           assert not re.search(r"Math\.random|\blorem\b|GPT|LLM", f.read_text()), f"fabricated or overstated AI content in {f.name}"
+E           AssertionError: fabricated or overstated AI content in Legal.tsx
+E           assert not <re.Match object; span=(970, 973), match='LLM'>
+E            +  where <re.Match object; span=(970, 973), match='LLM'> = <function search at 0x7f30c2f8dc60>('Math\\.random|\\blorem\\b|GPT|LLM', 'import { Link, useLocation } from "react-router-dom";\nexport default function Legal() {\n  const privacy = useLocati...essional before launch.</p>\n    <Link to="/register" className="underline">Return to registration</Link></main>;\n}\n')
+E            +    where <function search at 0x7f30c2f8dc60> = re.search
+E            +    and   'import { Link, useLocation } from "react-router-dom";\nexport default function Legal() {\n  const privacy = useLocati...essional before launch.</p>\n    <Link to="/register" className="underline">Return to registration</Link></main>;\n}\n' = read_text()
+E            +      where read_text = PosixPath('/home/user/skillgraph_audit/working/skillgraph-ai/frontend/src/pages/Legal.tsx').read_text
+
+tests/test_isolation_static.py:283: AssertionError
+______________ test_activity_endpoint_records_for_the_caller_only ______________
+
+client = <starlette.testclient.TestClient object at 0x7f30bcc66250>
+two = (('21f90e36-6264-4bee-aaf0-1593bed241c5', {'Authorization': 'Bearer [REDACTED_SYNTHETIC_JWT]'}))
+
+    def test_activity_endpoint_records_for_the_caller_only(client, two):
+        (_, ha), (_, hb) = two
+        assert client.post("/activity", headers=ha, json={"type": "resource_opened", "skill": "statistics", "url": "https://www.youtube.com/results?search_query=x"}).status_code == 201
+        assert "Opened a learning resource for Statistics" in [x["text"] for x in client.get("/dashboard", headers=ha).json()["recent_activity"]]
+        assert all("learning resource" not in x["text"] for x in client.get("/dashboard", headers=hb).json()["recent_activity"])
+        assert client.post("/activity", headers=ha, json={"type": "login", "skill": "python"}).status_code == 422
+        assert client.post("/activity", headers=ha, json={"type": "resource_opened", "skill": "nope"}).status_code == 404
+>       assert client.post("/activity", json={"type": "resource_opened", "skill": "python"}).status_code == 401
+E       AssertionError: assert 403 == 401
+E        +  where 403 = <Response [403 Forbidden]>.status_code
+E        +    where <Response [403 Forbidden]> = post('/activity', json={'type': 'resource_opened', 'skill': 'python'})
+E        +      where post = <starlette.testclient.TestClient object at 0x7f30bcc66250>.post
+
+tests/test_multi_user.py:144: AssertionError
+___________________________ test_photos_are_private ____________________________
+
+client = <starlette.testclient.TestClient object at 0x7f30bcc67df0>
+two = (('851da2d8-80a0-48db-b2b7-f34bf2a64a13', {'Authorization': 'Bearer [REDACTED_SYNTHETIC_JWT]'}))
+
+    def test_photos_are_private(client, two):
+        (_, ha), (_, hb) = two
+        png = b"\x89PNG\r\n\x1a\n" + b"\x00" * 32
+        assert client.post("/profile/photo", headers=ha, files={"file": ("a.png", png, "image/png")}).status_code == 200
+        assert client.get("/profile/photo", headers=ha).status_code == 200
+        assert client.get("/profile/photo", headers=hb).status_code == 404  # B has none, and can never be served A's
+>       assert client.get("/profile/photo").status_code == 401
+E       AssertionError: assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+E        +    where <Response [404 Not Found]> = get('/profile/photo')
+E        +      where get = <starlette.testclient.TestClient object at 0x7f30bcc67df0>.get
+
+tests/test_multi_user.py:153: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  skillgraph.auth:deps.py:60 auth: GET /profile/photo authenticated via cookie fallback (Authorization unusable: missing)
+_______________ test_next_best_action_endpoint_is_identity_only ________________
+
+client = <starlette.testclient.TestClient object at 0x7f30be5cdbf0>
+two = (('75fead57-21be-4f7f-9938-0f7d5e5b101e', {'Authorization': 'Bearer [REDACTED_SYNTHETIC_JWT]'}))
+
+    def test_next_best_action_endpoint_is_identity_only(client, two):
+        (_, ha), (idb, hb) = two
+        mine = client.get("/api/recommendations/next-best-action", headers=ha).json()
+        assert client.get(f"/api/recommendations/next-best-action?user_id={idb}", headers=ha).json() == mine
+>       assert client.get("/recommendations/next-best-action").status_code == 401
+E       AssertionError: assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+E        +    where <Response [200 OK]> = get('/recommendations/next-best-action')
+E        +      where get = <starlette.testclient.TestClient object at 0x7f30be5cdbf0>.get
+
+tests/test_multi_user.py:335: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  skillgraph.auth:deps.py:60 auth: GET /recommendations/next-best-action authenticated via cookie fallback (Authorization unusable: missing)
+__________________ test_skill_graph_is_per_user_with_evidence __________________
+
+client = <starlette.testclient.TestClient object at 0x7f30be5cdae0>
+two = (('677082df-a5c9-4e3d-8cf4-30d96657f62f', {'Authorization': 'Bearer [REDACTED_SYNTHETIC_JWT]'}))
+
+    def test_skill_graph_is_per_user_with_evidence(client, two):
+        (_, ha), (_, hb) = two
+        ga, gb = (client.get("/api/skill-graph", headers=h).json() for h in (ha, hb))
+        assert ga["role"] == "Machine Learning Engineer" and gb["role"] == "Full Stack Developer"
+        assert {n["id"] for n in ga["nodes"]} != {n["id"] for n in gb["nodes"]}
+        assert sum(ga["counts"].values()) == len(ga["nodes"]) and set(ga["counts"]) == {"acquired", "in_progress", "missing"}
+        py = next(n for n in ga["nodes"] if n["id"] == "python")
+        assert py["state"] == "acquired" and py["sources"] and py["verified"] is False   # self-assessed only: not verified
+        assert next(n for n in ga["nodes"] if n["id"] == "statistics")["state"] == "in_progress"
+        ml = next(n for n in ga["nodes"] if n["id"] == "machine-learning")
+        assert ml["why"] and {p["slug"] for p in ml["prerequisites"]} == {"statistics", "numpy", "pandas"} and all({"slug", "name"} <= set(u) for u in ml["unlocks"])
+        assert py["why"].startswith("Your evidence-based score is")
+        assert all(e["source"] in {n["id"] for n in ga["nodes"]} for e in ga["edges"])
+>       assert client.get("/skill-graph").status_code == 401
+E       AssertionError: assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+E        +    where <Response [200 OK]> = get('/skill-graph')
+E        +      where get = <starlette.testclient.TestClient object at 0x7f30be5cdae0>.get
+
+tests/test_multi_user.py:361: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  skillgraph.auth:deps.py:60 auth: GET /skill-graph authenticated via cookie fallback (Authorization unusable: missing)
+_______ test_projects_endpoint_lists_every_project_with_the_users_status _______
+
+client = <starlette.testclient.TestClient object at 0x7f30be931e10>
+two = (('eddcb4b5-08ff-487f-a7e6-75c41b4ba990', {'Authorization': 'Bearer [REDACTED_SYNTHETIC_JWT]'}))
+
+    def test_projects_endpoint_lists_every_project_with_the_users_status(client, two):
+        (_, ha), (_, hb) = two
+        r = client.get("/api/projects", headers=ha).json()
+        assert r["is_demo_data"] is True and len(r["projects"]) >= 10
+        keys = {p["key"] for p in r["projects"]}
+        assert client.post("/projects/house-prices/status", headers=ha, json={"status": "completed"}).status_code == 200
+        again = {p["key"]: p for p in client.get("/projects", headers=ha).json()["projects"]}
+        assert set(again) == keys and again["house-prices"]["status"] == "completed" and again["house-prices"]["recommended"] in (True, False)
+        other = {p["key"]: p for p in client.get("/projects", headers=hb).json()["projects"]}
+        assert other["house-prices"]["status"] == "not_started"                       # Bob never sees Alice's progress
+        first = client.get("/projects", headers=ha).json()["projects"][0]
+        assert {"ready", "missing_slugs", "why", "relevance", "recommended", "description", "expected_output"} <= set(first)
+>       assert client.get("/projects").status_code == 401
+E       AssertionError: assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+E        +    where <Response [200 OK]> = get('/projects')
+E        +      where get = <starlette.testclient.TestClient object at 0x7f30be931e10>.get
+
+tests/test_multi_user.py:395: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  skillgraph.auth:deps.py:60 auth: GET /projects authenticated via cookie fallback (Authorization unusable: missing)
+_______________ test_saved_jobs_can_be_removed_and_stay_private ________________
+
+client = <starlette.testclient.TestClient object at 0x7f30bcc67f00>
+two = (('4d7f854f-6ad9-4948-9636-7f81433b0bde', {'Authorization': 'Bearer [REDACTED_SYNTHETIC_JWT]'}))
+
+    def test_saved_jobs_can_be_removed_and_stay_private(client, two):
+        (_, ha), (_, hb) = two
+        key = client.get("/jobs", headers=ha).json()["jobs"][0]["key"]
+        assert client.post(f"/jobs/{key}/status", headers=ha, json={"status": "saved"}).status_code == 200
+        assert client.post(f"/jobs/{key}/status", headers=hb, json={"status": "saved"}).status_code == 200
+        assert client.delete(f"/jobs/{key}/status", headers=ha).status_code == 204
+        st = lambda h: next(j for j in client.get("/jobs", headers=h).json()["jobs"] if j["key"] == key)["application_status"]
+        assert st(ha) is None and st(hb) == "saved", "removing Alice's saved job must not touch Bob's"
+>       assert client.delete(f"/jobs/{key}/status").status_code == 401 and client.delete("/jobs/nope/status", headers=ha).status_code == 404
+E       AssertionError: assert (403 == 401)
+E        +  where 403 = <Response [403 Forbidden]>.status_code
+E        +    where <Response [403 Forbidden]> = delete('/jobs/ml-intern-1/status')
+E        +      where delete = <starlette.testclient.TestClient object at 0x7f30bcc67f00>.delete
+
+tests/test_multi_user.py:412: AssertionError
+_____________________________ test_photo_upload_ok _____________________________
+
+client = <starlette.testclient.TestClient object at 0x7f30be931ae0>
+auth = {'Authorization': 'Bearer [REDACTED_SYNTHETIC_JWT]'}
+
+    def test_photo_upload_ok(client, auth):
+        r = client.post("/profile/photo", headers=auth, files={"file": ("me.png", PNG, "image/png")})
+        assert r.status_code == 200
+        url = r.json()["photo_url"]
+        assert url == "/profile/photo"                         # no public file path is ever exposed
+        got = client.get(url, headers=auth)
+        assert got.status_code == 200 and got.content == PNG and got.headers["content-type"] == "image/png"
+        assert "no-store" in got.headers["cache-control"]
+>       assert client.get(url).status_code == 401              # not publicly readable
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+E        +    where <Response [200 OK]> = get('/profile/photo')
+E        +      where get = <starlette.testclient.TestClient object at 0x7f30be931ae0>.get
+
+tests/test_profile.py:61: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  skillgraph.auth:deps.py:60 auth: GET /profile/photo authenticated via cookie fallback (Authorization unusable: missing)
+=============================== warnings summary ===============================
+../../../../../usr/local/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_api_modules.py: 38 warnings
+tests/test_auth.py: 9 warnings
+tests/test_intelligence.py: 7 warnings
+tests/test_multi_user.py: 48 warnings
+tests/test_profile.py: 11 warnings
+  /usr/local/lib/python3.13/site-packages/jwt/api_jwt.py:149: InsecureKeyLengthWarning: The HMAC key is 16 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_api_modules.py: 178 warnings
+tests/test_auth.py: 8 warnings
+tests/test_intelligence.py: 35 warnings
+tests/test_multi_user.py: 208 warnings
+tests/test_profile.py: 19 warnings
+  /usr/local/lib/python3.13/site-packages/jwt/api_jwt.py:370: InsecureKeyLengthWarning: The HMAC key is 16 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    decoded = self.decode_complete(
+
+tests/test_multi_user.py::test_forged_and_foreign_tokens
+  /usr/local/lib/python3.13/site-packages/jwt/api_jwt.py:149: InsecureKeyLengthWarning: The HMAC key is 12 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_profile.py::test_photo_rejects_oversize
+  /usr/local/lib/python3.13/site-packages/fastapi/routing.py:372: StarletteDeprecationWarning: 'HTTP_413_REQUEST_ENTITY_TOO_LARGE' is deprecated. Use 'HTTP_413_CONTENT_TOO_LARGE' instead.
+    return await dependant.call(**values)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_auth.py::test_password_is_hashed - AssertionError: assert F...
+FAILED tests/test_auth.py::test_auth_accepts_fallback_header_when_authorization_is_unusable
+FAILED tests/test_auth.py::test_rate_limit_buckets_are_per_forwarded_client
+FAILED tests/test_intelligence.py::test_check_endpoints_validate_skill_questions_and_auth
+FAILED tests/test_intelligence.py::test_migration_upgrades_an_old_database_without_losing_data
+FAILED tests/test_isolation_static.py::test_no_where_clause_hand_filters_user_id_in_handlers
+FAILED tests/test_isolation_static.py::test_every_user_owned_table_has_an_indexed_user_fk
+FAILED tests/test_isolation_static.py::test_browser_storage_holds_only_the_token
+FAILED tests/test_isolation_static.py::test_internal_links_point_at_real_routes
+FAILED tests/test_isolation_static.py::test_motion_respects_reduced_motion_everywhere
+FAILED tests/test_isolation_static.py::test_real_results_are_never_artificially_delayed
+FAILED tests/test_multi_user.py::test_activity_endpoint_records_for_the_caller_only
+FAILED tests/test_multi_user.py::test_photos_are_private - AssertionError: as...
+FAILED tests/test_multi_user.py::test_next_best_action_endpoint_is_identity_only
+FAILED tests/test_multi_user.py::test_skill_graph_is_per_user_with_evidence
+FAILED tests/test_multi_user.py::test_projects_endpoint_lists_every_project_with_the_users_status
+FAILED tests/test_multi_user.py::test_saved_jobs_can_be_removed_and_stay_private
+FAILED tests/test_profile.py::test_photo_upload_ok - AssertionError: assert 2...
+18 failed, 191 passed, 564 warnings in 26.50s

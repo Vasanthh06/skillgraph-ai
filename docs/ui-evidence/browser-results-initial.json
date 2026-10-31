@@ -1,0 +1,2983 @@
+[
+  {
+    "check": "initial system follows light OS",
+    "pass": true
+  },
+  {
+    "check": "dark survives refresh",
+    "pass": true
+  },
+  {
+    "check": "light survives refresh",
+    "pass": true
+  },
+  {
+    "check": "system reacts to OS dark",
+    "pass": true
+  },
+  {
+    "check": "system reacts to OS light",
+    "pass": true
+  },
+  {
+    "check": "public theme light /",
+    "pass": true
+  },
+  {
+    "check": "public theme light /login",
+    "pass": true
+  },
+  {
+    "check": "public theme light /register",
+    "pass": true
+  },
+  {
+    "check": "public theme light /account/forgot",
+    "pass": true
+  },
+  {
+    "check": "public theme light /account/reset",
+    "pass": true
+  },
+  {
+    "check": "public theme light /account/verify",
+    "pass": true
+  },
+  {
+    "check": "public theme light /privacy",
+    "pass": true
+  },
+  {
+    "check": "public theme light /terms",
+    "pass": true
+  },
+  {
+    "check": "public theme dark /",
+    "pass": true
+  },
+  {
+    "check": "public theme dark /login",
+    "pass": true
+  },
+  {
+    "check": "public theme dark /register",
+    "pass": true
+  },
+  {
+    "check": "public theme dark /account/forgot",
+    "pass": true
+  },
+  {
+    "check": "public theme dark /account/reset",
+    "pass": true
+  },
+  {
+    "check": "public theme dark /account/verify",
+    "pass": true
+  },
+  {
+    "check": "public theme dark /privacy",
+    "pass": true
+  },
+  {
+    "check": "public theme dark /terms",
+    "pass": true
+  },
+  {
+    "check": "illustrative graph keyboard selection",
+    "pass": true
+  },
+  {
+    "check": "example roadmap interaction",
+    "pass": true
+  },
+  {
+    "check": "landing registration CTA",
+    "pass": true
+  },
+  {
+    "check": "UI registration",
+    "pass": true
+  },
+  {
+    "check": "direct dashboard back unavailable",
+    "pass": true
+  },
+  {
+    "check": "router Back previous real entry",
+    "pass": true
+  },
+  {
+    "check": "router Forward restores next entry",
+    "pass": true
+  },
+  {
+    "check": "browser back and forward",
+    "pass": true
+  },
+  {
+    "check": "forward availability survives reload",
+    "pass": true
+  },
+  {
+    "check": "Back opens unsaved guard",
+    "pass": true
+  },
+  {
+    "check": "cancel keeps draft",
+    "pass": true
+  },
+  {
+    "check": "browser Back guarded and Escape cancels",
+    "pass": true
+  },
+  {
+    "check": "confirmed route transition discards draft",
+    "pass": true
+  },
+  {
+    "check": "roadmap progress persists",
+    "pass": true
+  },
+  {
+    "check": "private theme light /dashboard",
+    "pass": true
+  },
+  {
+    "check": "history visible light /dashboard",
+    "pass": true
+  },
+  {
+    "check": "private theme light /profile",
+    "pass": true
+  },
+  {
+    "check": "history visible light /profile",
+    "pass": true
+  },
+  {
+    "check": "private theme light /onboarding",
+    "pass": true
+  },
+  {
+    "check": "history visible light /onboarding",
+    "pass": true
+  },
+  {
+    "check": "private theme light /assessment",
+    "pass": true
+  },
+  {
+    "check": "history visible light /assessment",
+    "pass": true
+  },
+  {
+    "check": "private theme light /role",
+    "pass": true
+  },
+  {
+    "check": "history visible light /role",
+    "pass": true
+  },
+  {
+    "check": "private theme light /skill-graph",
+    "pass": true
+  },
+  {
+    "check": "history visible light /skill-graph",
+    "pass": true
+  },
+  {
+    "check": "private theme light /projects",
+    "pass": true
+  },
+  {
+    "check": "history visible light /projects",
+    "pass": true
+  },
+  {
+    "check": "private theme light /skill-gap",
+    "pass": true
+  },
+  {
+    "check": "history visible light /skill-gap",
+    "pass": true
+  },
+  {
+    "check": "private theme light /roadmap",
+    "pass": true
+  },
+  {
+    "check": "history visible light /roadmap",
+    "pass": true
+  },
+  {
+    "check": "private theme light /learn",
+    "pass": true
+  },
+  {
+    "check": "history visible light /learn",
+    "pass": true
+  },
+  {
+    "check": "private theme light /jobs",
+    "pass": true
+  },
+  {
+    "check": "history visible light /jobs",
+    "pass": true
+  },
+  {
+    "check": "private theme light /interview",
+    "pass": true
+  },
+  {
+    "check": "history visible light /interview",
+    "pass": true
+  },
+  {
+    "check": "private theme light /resume",
+    "pass": true
+  },
+  {
+    "check": "history visible light /resume",
+    "pass": true
+  },
+  {
+    "check": "private theme light /explore",
+    "pass": true
+  },
+  {
+    "check": "history visible light /explore",
+    "pass": true
+  },
+  {
+    "check": "private theme light /admin",
+    "pass": true
+  },
+  {
+    "check": "history visible light /admin",
+    "pass": true
+  },
+  {
+    "check": "normal user still denied admin",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /dashboard",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /dashboard",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /profile",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /profile",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /onboarding",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /onboarding",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /assessment",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /assessment",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /role",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /role",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /skill-graph",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /skill-graph",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /projects",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /projects",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /skill-gap",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /skill-gap",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /roadmap",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /roadmap",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /learn",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /learn",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /jobs",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /jobs",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /interview",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /interview",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /resume",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /resume",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /explore",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /explore",
+    "pass": true
+  },
+  {
+    "check": "private theme dark /admin",
+    "pass": true
+  },
+  {
+    "check": "history visible dark /admin",
+    "pass": true
+  },
+  {
+    "check": "normal user still denied admin",
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/dashboard",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/profile",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/onboarding",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/assessment",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/role",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-graph",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/projects",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-gap",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/roadmap",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/learn",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/jobs",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/interview",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/resume",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/explore",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/admin",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/dashboard",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/profile",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/onboarding",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/assessment",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/role",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-graph",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/projects",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-gap",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/roadmap",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/learn",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/jobs",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/interview",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/resume",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/explore",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/admin",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/dashboard",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/profile",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/onboarding",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/assessment",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/role",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-graph",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/projects",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-gap",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/roadmap",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/learn",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/jobs",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/interview",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/resume",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/explore",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/admin",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/dashboard",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/profile",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/onboarding",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/assessment",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/role",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-graph",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/projects",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-gap",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/roadmap",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/learn",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/jobs",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/interview",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/resume",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/explore",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/admin",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/dashboard",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/profile",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/onboarding",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/assessment",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/role",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-graph",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/projects",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-gap",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/roadmap",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/learn",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/jobs",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/interview",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/resume",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/explore",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/admin",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/dashboard",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/profile",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/onboarding",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/assessment",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/role",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-graph",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/projects",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-gap",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/roadmap",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/learn",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/jobs",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/interview",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/resume",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/explore",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/admin",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/dashboard",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/profile",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/onboarding",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/assessment",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/role",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-graph",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/projects",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-gap",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/roadmap",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/learn",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/jobs",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/interview",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/resume",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/explore",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/admin",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/dashboard",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/profile",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/onboarding",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/assessment",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/role",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-graph",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/projects",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/skill-gap",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/roadmap",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/learn",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/jobs",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/interview",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/resume",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/explore",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/admin",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/dashboard",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/profile",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/onboarding",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/assessment",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/role",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-graph",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/projects",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-gap",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/roadmap",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/learn",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/jobs",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/interview",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/resume",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/explore",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/admin",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/dashboard",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/profile",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/onboarding",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/assessment",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/role",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-graph",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/projects",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-gap",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/roadmap",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/learn",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/jobs",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/interview",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/resume",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/explore",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/admin",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/dashboard",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/profile",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/onboarding",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/assessment",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/role",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-graph",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/projects",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-gap",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/roadmap",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/learn",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/jobs",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/interview",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/resume",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/explore",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/admin",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/dashboard",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/profile",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/onboarding",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/assessment",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/role",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-graph",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/projects",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-gap",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/roadmap",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/learn",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/jobs",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/interview",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/resume",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/explore",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/admin",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/dashboard",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/profile",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/onboarding",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/assessment",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/role",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-graph",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/projects",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-gap",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/roadmap",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/learn",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/jobs",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/interview",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/resume",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/explore",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/admin",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/dashboard",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/profile",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/onboarding",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/assessment",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/role",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-graph",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/projects",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-gap",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/roadmap",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/learn",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/jobs",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/interview",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/resume",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/explore",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/admin",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/dashboard",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/profile",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/onboarding",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/assessment",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/role",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-graph",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/projects",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-gap",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/roadmap",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/learn",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/jobs",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/interview",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/resume",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/explore",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/admin",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/dashboard",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/profile",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/onboarding",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/assessment",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/role",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-graph",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/projects",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/skill-gap",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/roadmap",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/learn",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/jobs",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/interview",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/resume",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/explore",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/admin",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "UI login plus refresh stays authenticated",
+    "pass": true
+  },
+  {
+    "check": "protected route remains protected",
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/",
+    "width": 320,
+    "pass": false
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/login",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/register",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/forgot",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/reset",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/verify",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/privacy",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/terms",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/",
+    "width": 375,
+    "pass": false
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/login",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/register",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/forgot",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/reset",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/verify",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/privacy",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/terms",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/",
+    "width": 390,
+    "pass": false
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/login",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/register",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/forgot",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/reset",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/verify",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/privacy",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/terms",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/",
+    "width": 430,
+    "pass": false
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/login",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/register",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/forgot",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/reset",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/verify",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/privacy",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/terms",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/login",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/register",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/forgot",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/reset",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/verify",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/privacy",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/terms",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/login",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/register",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/forgot",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/reset",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/verify",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/privacy",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/terms",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/login",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/register",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/forgot",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/reset",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/verify",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/privacy",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/terms",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/login",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/register",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/forgot",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/reset",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/account/verify",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/privacy",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "light",
+    "route": "/terms",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/",
+    "width": 320,
+    "pass": false
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/login",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/register",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/forgot",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/reset",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/verify",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/privacy",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/terms",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/",
+    "width": 375,
+    "pass": false
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/login",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/register",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/forgot",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/reset",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/verify",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/privacy",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/terms",
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/",
+    "width": 390,
+    "pass": false
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/login",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/register",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/forgot",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/reset",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/verify",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/privacy",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/terms",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/",
+    "width": 430,
+    "pass": false
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/login",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/register",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/forgot",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/reset",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/verify",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/privacy",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/terms",
+    "width": 430,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/login",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/register",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/forgot",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/reset",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/verify",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/privacy",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/terms",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/login",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/register",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/forgot",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/reset",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/verify",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/privacy",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/terms",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/login",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/register",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/forgot",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/reset",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/verify",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/privacy",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/terms",
+    "width": 1280,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/login",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/register",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/forgot",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/reset",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/account/verify",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/privacy",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "viewport",
+    "theme": "dark",
+    "route": "/terms",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "check": "no JavaScript page errors",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "check": "reduced motion disables graph animation",
+    "pass": true
+  }
+]

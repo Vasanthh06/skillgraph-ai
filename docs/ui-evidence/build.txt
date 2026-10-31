@@ -1,0 +1,13 @@
+
+> skillgraph-frontend@0.1.0 build
+> tsc -b && vite build
+
+vite v6.4.5 building for production...
+transforming...
+✓ 124 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.32 kB │ gzip:   0.68 kB
+dist/assets/index-Cm3V3wS2.css   50.76 kB │ gzip:  10.94 kB
+dist/assets/index-Bcb381u1.js   427.33 kB │ gzip: 129.08 kB
+✓ built in 2.13s

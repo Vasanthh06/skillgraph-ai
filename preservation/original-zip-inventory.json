@@ -1,0 +1,662 @@
+[
+  {
+    "path": "skillgraph-ai/.env.example",
+    "size": 1160
+  },
+  {
+    "path": "skillgraph-ai/.gitignore",
+    "size": 443
+  },
+  {
+    "path": "skillgraph-ai/README.md",
+    "size": 41601
+  },
+  {
+    "path": "skillgraph-ai/backend/Dockerfile",
+    "size": 317
+  },
+  {
+    "path": "skillgraph-ai/backend/app/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/backend/app/api/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/backend/app/api/auth.py",
+    "size": 1428
+  },
+  {
+    "path": "skillgraph-ai/backend/app/api/deps.py",
+    "size": 3809
+  },
+  {
+    "path": "skillgraph-ai/backend/app/api/modules_core.py",
+    "size": 16787
+  },
+  {
+    "path": "skillgraph-ai/backend/app/api/modules_progress.py",
+    "size": 30125
+  },
+  {
+    "path": "skillgraph-ai/backend/app/api/profile.py",
+    "size": 2889
+  },
+  {
+    "path": "skillgraph-ai/backend/app/core/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/backend/app/core/config.py",
+    "size": 2130
+  },
+  {
+    "path": "skillgraph-ai/backend/app/core/database.py",
+    "size": 777
+  },
+  {
+    "path": "skillgraph-ai/backend/app/core/migrations.py",
+    "size": 5912
+  },
+  {
+    "path": "skillgraph-ai/backend/app/core/security.py",
+    "size": 1284
+  },
+  {
+    "path": "skillgraph-ai/backend/app/data/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/backend/app/data/jobs_data.py",
+    "size": 3107
+  },
+  {
+    "path": "skillgraph-ai/backend/app/data/projects_data.py",
+    "size": 3991
+  },
+  {
+    "path": "skillgraph-ai/backend/app/data/questions_data.py",
+    "size": 10322
+  },
+  {
+    "path": "skillgraph-ai/backend/app/data/roles_data.py",
+    "size": 7189
+  },
+  {
+    "path": "skillgraph-ai/backend/app/data/skills_data.py",
+    "size": 12869
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/__init__.py",
+    "size": 102
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/actions.py",
+    "size": 8709
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/catalog.py",
+    "size": 6328
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/gap.py",
+    "size": 8205
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/intelligence.py",
+    "size": 20656
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/interview.py",
+    "size": 4064
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/jobs.py",
+    "size": 6116
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/knowledge.py",
+    "size": 4872
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/recommend.py",
+    "size": 5096
+  },
+  {
+    "path": "skillgraph-ai/backend/app/engine/roadmap.py",
+    "size": 1850
+  },
+  {
+    "path": "skillgraph-ai/backend/app/graph/__init__.py",
+    "size": 84
+  },
+  {
+    "path": "skillgraph-ai/backend/app/graph/skill_graph.py",
+    "size": 3294
+  },
+  {
+    "path": "skillgraph-ai/backend/app/main.py",
+    "size": 2220
+  },
+  {
+    "path": "skillgraph-ai/backend/app/ml/__init__.py",
+    "size": 84
+  },
+  {
+    "path": "skillgraph-ai/backend/app/ml/embeddings.py",
+    "size": 2312
+  },
+  {
+    "path": "skillgraph-ai/backend/app/ml/semantic.py",
+    "size": 1943
+  },
+  {
+    "path": "skillgraph-ai/backend/app/ml/vector_index.py",
+    "size": 1484
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/__init__.py",
+    "size": 962
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/base.py",
+    "size": 436
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/interview.py",
+    "size": 1928
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/jobs.py",
+    "size": 1830
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/learning.py",
+    "size": 6794
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/ml.py",
+    "size": 2501
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/resume.py",
+    "size": 1198
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/skills.py",
+    "size": 3268
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/user.py",
+    "size": 2644
+  },
+  {
+    "path": "skillgraph-ai/backend/app/models/user_skills.py",
+    "size": 3770
+  },
+  {
+    "path": "skillgraph-ai/backend/app/nlp/__init__.py",
+    "size": 84
+  },
+  {
+    "path": "skillgraph-ai/backend/app/nlp/resume_parser.py",
+    "size": 11011
+  },
+  {
+    "path": "skillgraph-ai/backend/app/repositories/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/backend/app/repositories/scoped.py",
+    "size": 3494
+  },
+  {
+    "path": "skillgraph-ai/backend/app/repositories/users.py",
+    "size": 1185
+  },
+  {
+    "path": "skillgraph-ai/backend/app/schemas/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/backend/app/schemas/auth.py",
+    "size": 2002
+  },
+  {
+    "path": "skillgraph-ai/backend/app/schemas/profile.py",
+    "size": 2722
+  },
+  {
+    "path": "skillgraph-ai/backend/app/services/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/backend/app/services/analysis.py",
+    "size": 16663
+  },
+  {
+    "path": "skillgraph-ai/backend/app/services/auth_service.py",
+    "size": 1699
+  },
+  {
+    "path": "skillgraph-ai/backend/app/services/intelligence.py",
+    "size": 3965
+  },
+  {
+    "path": "skillgraph-ai/backend/app/services/profile_service.py",
+    "size": 2213
+  },
+  {
+    "path": "skillgraph-ai/backend/app/services/seed.py",
+    "size": 3465
+  },
+  {
+    "path": "skillgraph-ai/backend/app/services/views.py",
+    "size": 24305
+  },
+  {
+    "path": "skillgraph-ai/backend/app/services/youtube.py",
+    "size": 2608
+  },
+  {
+    "path": "skillgraph-ai/backend/app/utils/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/backend/app/utils/rate_limit.py",
+    "size": 1830
+  },
+  {
+    "path": "skillgraph-ai/backend/migrations/002_skill_intelligence.py",
+    "size": 463
+  },
+  {
+    "path": "skillgraph-ai/backend/migrations/README.md",
+    "size": 813
+  },
+  {
+    "path": "skillgraph-ai/backend/requirements.txt",
+    "size": 250
+  },
+  {
+    "path": "skillgraph-ai/backend/uploads/.gitkeep",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/data/.gitkeep",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/design/logo-source.png",
+    "size": 703148
+  },
+  {
+    "path": "skillgraph-ai/design/make_logo_variants.py",
+    "size": 1917
+  },
+  {
+    "path": "skillgraph-ai/docker-compose.yml",
+    "size": 1176
+  },
+  {
+    "path": "skillgraph-ai/frontend/Dockerfile",
+    "size": 163
+  },
+  {
+    "path": "skillgraph-ai/frontend/index.html",
+    "size": 800
+  },
+  {
+    "path": "skillgraph-ai/frontend/package-lock.json",
+    "size": 93288
+  },
+  {
+    "path": "skillgraph-ai/frontend/package.json",
+    "size": 645
+  },
+  {
+    "path": "skillgraph-ai/frontend/postcss.config.js",
+    "size": 67
+  },
+  {
+    "path": "skillgraph-ai/frontend/public/apple-touch-icon.png",
+    "size": 16300
+  },
+  {
+    "path": "skillgraph-ai/frontend/public/favicon-64.png",
+    "size": 3431
+  },
+  {
+    "path": "skillgraph-ai/frontend/public/logo-full-dark.png",
+    "size": 165701
+  },
+  {
+    "path": "skillgraph-ai/frontend/public/logo-full-light.png",
+    "size": 178121
+  },
+  {
+    "path": "skillgraph-ai/frontend/public/logo-mark.png",
+    "size": 27663
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/App.tsx",
+    "size": 2089
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/AssessmentForm.tsx",
+    "size": 9000
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/Avatar.tsx",
+    "size": 1234
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/CareerTabs.tsx",
+    "size": 1079
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/FormError.tsx",
+    "size": 253
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/Icon.tsx",
+    "size": 1811
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/IntelligencePanels.tsx",
+    "size": 15512
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/ProtectedRoute.tsx",
+    "size": 412
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/ResumePanel.tsx",
+    "size": 10633
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/RolePicker.tsx",
+    "size": 3569
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/SaveBar.tsx",
+    "size": 1512
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/SkillGraph.tsx",
+    "size": 4308
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/SkillGraphView.tsx",
+    "size": 7506
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/dashboard.tsx",
+    "size": 4731
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/components/ui.tsx",
+    "size": 7172
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/hooks/useApi.ts",
+    "size": 894
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/hooks/useMotion.ts",
+    "size": 1803
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/hooks/useProfile.ts",
+    "size": 736
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/index.css",
+    "size": 5174
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/layouts/AppLayout.tsx",
+    "size": 8044
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/layouts/AuthLayout.tsx",
+    "size": 2695
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/main.tsx",
+    "size": 907
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Assessment.tsx",
+    "size": 453
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Dashboard.tsx",
+    "size": 14431
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Explore.tsx",
+    "size": 5634
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Interview.tsx",
+    "size": 9113
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Jobs.tsx",
+    "size": 11143
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Landing.tsx",
+    "size": 2828
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Learn.tsx",
+    "size": 9808
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Login.tsx",
+    "size": 3467
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Onboarding.tsx",
+    "size": 2484
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Profile.tsx",
+    "size": 8688
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Projects.tsx",
+    "size": 7612
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Register.tsx",
+    "size": 3623
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Resume.tsx",
+    "size": 441
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/Roadmap.tsx",
+    "size": 7902
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/RolePage.tsx",
+    "size": 329
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/SkillGap.tsx",
+    "size": 4409
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/pages/SkillGraph.tsx",
+    "size": 8105
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/services/api.ts",
+    "size": 5367
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/store/auth.tsx",
+    "size": 2528
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/store/dirty.tsx",
+    "size": 1722
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/store/notice.tsx",
+    "size": 1113
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/types/api.ts",
+    "size": 235
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/types/index.ts",
+    "size": 983
+  },
+  {
+    "path": "skillgraph-ai/frontend/src/vite-env.d.ts",
+    "size": 38
+  },
+  {
+    "path": "skillgraph-ai/frontend/tailwind.config.js",
+    "size": 1568
+  },
+  {
+    "path": "skillgraph-ai/frontend/tsconfig.json",
+    "size": 390
+  },
+  {
+    "path": "skillgraph-ai/frontend/vite.config.ts",
+    "size": 1010
+  },
+  {
+    "path": "skillgraph-ai/ml/README.md",
+    "size": 401
+  },
+  {
+    "path": "skillgraph-ai/ml/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/ml/embeddings/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/ml/evaluation/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/ml/evaluation/metrics.py",
+    "size": 1275
+  },
+  {
+    "path": "skillgraph-ai/ml/preprocessing/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/ml/preprocessing/build_dataset.py",
+    "size": 1739
+  },
+  {
+    "path": "skillgraph-ai/ml/ranking/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/ml/ranking/rank.py",
+    "size": 1470
+  },
+  {
+    "path": "skillgraph-ai/ml/sasrec/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/ml/sasrec/model.py",
+    "size": 2142
+  },
+  {
+    "path": "skillgraph-ai/ml/sasrec/train.py",
+    "size": 1178
+  },
+  {
+    "path": "skillgraph-ai/ml/two_tower/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/ml/two_tower/model.py",
+    "size": 1765
+  },
+  {
+    "path": "skillgraph-ai/ml/two_tower/train.py",
+    "size": 1195
+  },
+  {
+    "path": "skillgraph-ai/pytest.ini",
+    "size": 48
+  },
+  {
+    "path": "skillgraph-ai/scripts/init_db.py",
+    "size": 833
+  },
+  {
+    "path": "skillgraph-ai/scripts/migrate_db.py",
+    "size": 844
+  },
+  {
+    "path": "skillgraph-ai/scripts/run_local.sh",
+    "size": 2036
+  },
+  {
+    "path": "skillgraph-ai/scripts/seed_demo.py",
+    "size": 2630
+  },
+  {
+    "path": "skillgraph-ai/tests/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "skillgraph-ai/tests/conftest.py",
+    "size": 1539
+  },
+  {
+    "path": "skillgraph-ai/tests/run_pure.py",
+    "size": 682
+  },
+  {
+    "path": "skillgraph-ai/tests/test_api_modules.py",
+    "size": 24110
+  },
+  {
+    "path": "skillgraph-ai/tests/test_auth.py",
+    "size": 6062
+  },
+  {
+    "path": "skillgraph-ai/tests/test_engine.py",
+    "size": 23642
+  },
+  {
+    "path": "skillgraph-ai/tests/test_intelligence.py",
+    "size": 15496
+  },
+  {
+    "path": "skillgraph-ai/tests/test_isolation_static.py",
+    "size": 16898
+  },
+  {
+    "path": "skillgraph-ai/tests/test_ml_pure.py",
+    "size": 1972
+  },
+  {
+    "path": "skillgraph-ai/tests/test_multi_user.py",
+    "size": 25470
+  },
+  {
+    "path": "skillgraph-ai/tests/test_profile.py",
+    "size": 4565
+  }
+]

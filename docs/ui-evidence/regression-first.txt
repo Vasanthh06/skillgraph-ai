@@ -1,0 +1,56 @@
+........................................................................ [ 32%]
+........................................................................ [ 64%]
+.......F........FF...................................................... [ 96%]
+.......                                                                  [100%]
+=================================== FAILURES ===================================
+__________________ test_browser_storage_holds_only_the_token ___________________
+
+    def test_browser_storage_holds_only_the_token():
+        uses = {}
+        for p in (ROOT / "frontend" / "src").rglob("*.ts*"):
+            for m in re.finditer(r"(localStorage|sessionStorage|indexedDB)\.\w+\(([^)]*)\)", p.read_text()):
+                uses.setdefault(p.name, []).append(m.group(0))
+        flat = [u for v in uses.values() for u in v]
+>       assert not flat, uses  # secrets must never persist in browser Web Storage
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: {'theme.tsx': ['localStorage.getItem(THEME_KEY)', 'localStorage.setItem(THEME_KEY, p)'], 'navigation.tsx': ['sessionStorage.getItem(KEY)', 'sessionStorage.setItem(KEY, JSON.stringify(next)']}
+E       assert not ['localStorage.getItem(THEME_KEY)', 'localStorage.setItem(THEME_KEY, p)', 'sessionStorage.getItem(KEY)', 'sessionStorage.setItem(KEY, JSON.stringify(next)']
+
+tests/test_isolation_static.py:96: AssertionError
+_______________ test_logo_is_used_in_the_shell_and_auth_screens ________________
+
+    def test_logo_is_used_in_the_shell_and_auth_screens():
+        assert "/logo-mark.png" in _fe("layouts/AppLayout.tsx") and "gradient-text" in _fe("layouts/AppLayout.tsx")
+>       assert "/logo-full-dark.png" in _fe("layouts/AuthLayout.tsx") and "/logo-full-dark.png" in _fe("pages/Landing.tsx")
+E       assert ('/logo-full-dark.png' in 'import { Link } from "react-router-dom";\nimport type { ReactNode } from "react";\n\nconst STOPS = [\n  { q: "Where a...        <div className="mt-7">{children}</div>\n          </div>\n        </div>\n      </main>\n    </div>\n  );\n}\n' and '/logo-full-dark.png' in 'import { useEffect, useRef, useState } from "react";\nimport { Link } from "react-router-dom";\nimport { useAuth } fr... className="footer-note">Academic project · Guidance, not a guarantee of career outcomes.</p></footer>\n  </div>;\n}\n')
+E        +  where 'import { Link } from "react-router-dom";\nimport type { ReactNode } from "react";\n\nconst STOPS = [\n  { q: "Where a...        <div className="mt-7">{children}</div>\n          </div>\n        </div>\n      </main>\n    </div>\n  );\n}\n' = _fe('layouts/AuthLayout.tsx')
+E        +  and   'import { useEffect, useRef, useState } from "react";\nimport { Link } from "react-router-dom";\nimport { useAuth } fr... className="footer-note">Academic project · Guidance, not a guarantee of career outcomes.</p></footer>\n  </div>;\n}\n' = _fe('pages/Landing.tsx')
+
+tests/test_isolation_static.py:185: AssertionError
+______________ test_the_dark_navy_theme_is_wired_through_tailwind ______________
+
+    def test_the_dark_navy_theme_is_wired_through_tailwind():
+        cfg = (FE.parent / "tailwind.config.js").read_text()
+>       assert '"#060B1E"' in cfg and "linear-gradient(135deg,#3B82FF" in cfg
+E       assert ('"#060B1E"' in '/** @type {import(\'tailwindcss\').Config} */\n// Dark navy + purple-blue theme. Existing pages use these token names...if"],\n        sans: [\'"Instrument Sans"\', "system-ui", "sans-serif"],\n      },\n    },\n  },\n  plugins: [],\n};\n')
+
+tests/test_isolation_static.py:190: AssertionError
+=============================== warnings summary ===============================
+../../../../../usr/local/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_multi_user.py::test_forged_and_foreign_tokens
+  /usr/local/lib/python3.13/site-packages/jwt/api_jwt.py:149: InsecureKeyLengthWarning: The HMAC key is 12 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_profile.py::test_photo_rejects_oversize
+  /usr/local/lib/python3.13/site-packages/fastapi/routing.py:372: StarletteDeprecationWarning: 'HTTP_413_REQUEST_ENTITY_TOO_LARGE' is deprecated. Use 'HTTP_413_CONTENT_TOO_LARGE' instead.
+    return await dependant.call(**values)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_isolation_static.py::test_browser_storage_holds_only_the_token
+FAILED tests/test_isolation_static.py::test_logo_is_used_in_the_shell_and_auth_screens
+FAILED tests/test_isolation_static.py::test_the_dark_navy_theme_is_wired_through_tailwind
+3 failed, 220 passed, 3 warnings in 27.70s

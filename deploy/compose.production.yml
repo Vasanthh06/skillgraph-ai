@@ -1,0 +1,20 @@
+# Run from repository root: docker compose -f deploy/compose.production.yml up --build
+# Requires a TLS terminator upstream and private backend network. Not deployed/validated here.
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    env_file: ../.env
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--no-proxy-headers"]
+    volumes: [uploads:/srv/backend/uploads]
+    restart: unless-stopped
+  frontend:
+    build:
+      context: ..
+      dockerfile: deploy/frontend.Dockerfile
+    ports: ["8080:80"]
+    depends_on: [backend]
+    restart: unless-stopped
+volumes:
+  uploads:

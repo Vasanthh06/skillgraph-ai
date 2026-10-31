@@ -1,0 +1,7 @@
+{
+  "checks": 473,
+  "failed": 0,
+  "viewport_checks": 368,
+  "axe_violations": 0,
+  "screenshots": 18
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "route": "/roadmap",
+    "theme": "light",
+    "id": "color-contrast",
+    "impact": "serious",
+    "nodes": [
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #7a8499, background color: #d8e0ed, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ]
+  },
+  {
+    "route": "/roadmap",
+    "theme": "dark",
+    "id": "color-contrast",
+    "impact": "serious",
+    "nodes": [
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<span class=\"inline-block rounded px-2 py-0.5 text-xs font-medium bg-mist text-ink-soft\">Needs more evidence</span>",
+        "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #7f899e, background color: #232e44, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ]
+  }
+]

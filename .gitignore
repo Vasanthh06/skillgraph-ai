@@ -1,0 +1,44 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / frontend builds
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Local databases and uploaded user files
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+data/*
+!data/.gitkeep
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs and editor/OS files
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+.env.*
+!.env.example
+playwright-report/
+test-results/
+*.db

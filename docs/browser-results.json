@@ -1,0 +1,254 @@
+[
+  {
+    "journey": "UI adult registration",
+    "pass": true
+  },
+  {
+    "journey": "API assessment, roadmap generation, completion persisted after browser reload",
+    "pass": true
+  },
+  {
+    "viewport": 320,
+    "route": "/",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 320,
+    "route": "/login",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 320,
+    "route": "/register",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 320,
+    "route": "/dashboard",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 320,
+    "route": "/roadmap",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 320,
+    "route": "/skill-graph",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 375,
+    "route": "/",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 375,
+    "route": "/login",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 375,
+    "route": "/register",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 375,
+    "route": "/dashboard",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 375,
+    "route": "/roadmap",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 375,
+    "route": "/skill-graph",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 390,
+    "route": "/",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 390,
+    "route": "/login",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 390,
+    "route": "/register",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 390,
+    "route": "/dashboard",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 390,
+    "route": "/roadmap",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 390,
+    "route": "/skill-graph",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 430,
+    "route": "/",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 430,
+    "route": "/login",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 430,
+    "route": "/register",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 430,
+    "route": "/dashboard",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 430,
+    "route": "/roadmap",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 430,
+    "route": "/skill-graph",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 768,
+    "route": "/",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 768,
+    "route": "/login",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 768,
+    "route": "/register",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 768,
+    "route": "/dashboard",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 768,
+    "route": "/roadmap",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 768,
+    "route": "/skill-graph",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1024,
+    "route": "/",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1024,
+    "route": "/login",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1024,
+    "route": "/register",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1024,
+    "route": "/dashboard",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1024,
+    "route": "/roadmap",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1024,
+    "route": "/skill-graph",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1280,
+    "route": "/",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1280,
+    "route": "/login",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1280,
+    "route": "/register",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1280,
+    "route": "/dashboard",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1280,
+    "route": "/roadmap",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1280,
+    "route": "/skill-graph",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1440,
+    "route": "/",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1440,
+    "route": "/login",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1440,
+    "route": "/register",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1440,
+    "route": "/dashboard",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1440,
+    "route": "/roadmap",
+    "horizontal_overflow": false
+  },
+  {
+    "viewport": 1440,
+    "route": "/skill-graph",
+    "horizontal_overflow": false
+  },
+  {
+    "journey": "UI login and HttpOnly session reload",
+    "pass": true
+  }
+]

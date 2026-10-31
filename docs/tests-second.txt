@@ -1,0 +1,96 @@
+........................................................................ [ 34%]
+.......................................................F................ [ 68%]
+........F........................................................        [100%]
+=================================== FAILURES ===================================
+_________ test_migration_upgrades_an_old_database_without_losing_data __________
+
+    def test_migration_upgrades_an_old_database_without_losing_data():
+        engine = create_engine("sqlite://")
+        with engine.begin() as c:
+            c.execute(text("CREATE TABLE users (id VARCHAR(36) PRIMARY KEY)"))
+            c.execute(text("CREATE TABLE skills (id INTEGER PRIMARY KEY)"))
+            c.execute(text("INSERT INTO users VALUES ('u1')"))
+            c.execute(text("INSERT INTO skills VALUES (1)"))
+            c.execute(text("CREATE TABLE user_skills (id INTEGER PRIMARY KEY, user_id VARCHAR(36), skill_id INTEGER, "
+                           "score FLOAT, level VARCHAR(20), confidence FLOAT, created_at TIMESTAMP, updated_at TIMESTAMP)"))
+            c.execute(text("CREATE TABLE user_skill_assessments (id INTEGER PRIMARY KEY, user_id VARCHAR(36), skill_id INTEGER, "
+                           "self_level VARCHAR(20), checklist JSON, test_score FLOAT, created_at TIMESTAMP, updated_at TIMESTAMP)"))
+            c.execute(text("CREATE TABLE interview_attempts (id INTEGER PRIMARY KEY, user_id VARCHAR(36), question_id INTEGER, "
+                           "answer TEXT, score FLOAT, created_at TIMESTAMP, updated_at TIMESTAMP)"))
+            c.execute(text("CREATE TABLE user_progress (id INTEGER PRIMARY KEY, user_id VARCHAR(36), skill_id INTEGER, "
+                           "item_type VARCHAR(20), item_id INTEGER, completed BOOLEAN, created_at TIMESTAMP, updated_at TIMESTAMP)"))
+            c.execute(text("INSERT INTO user_skill_assessments VALUES (1,'u1',1,'beginner','{\"Loops\": true}',NULL,'2024-01-01','2024-01-01')"))
+            c.execute(text("INSERT INTO user_skill_assessments VALUES (2,'u1',1,'advanced',NULL,70,'2024-02-01','2024-02-01')"))
+            c.execute(text("INSERT INTO user_progress VALUES (1,'u1',1,'resource',0,1,'2024-02-01','2024-02-02')"))
+            c.execute(text("INSERT INTO interview_attempts VALUES (1,'u1',1,'x',50,'2024-02-01','2024-02-01')"))
+    
+>       actions = migrate_intelligence(engine)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_intelligence.py:246: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/app/core/migrations.py:108: in migrate_intelligence
+    n = _dedupe_assessments(conn)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+conn = <sqlalchemy.engine.base.Connection object at 0x7f2009a05d90>
+
+    def _dedupe_assessments(conn) -> int:
+        """Merge duplicate (user, skill) assessment rows so the unique index can be created safely."""
+        merged = 0
+        pairs = conn.execute(text(
+            "SELECT user_id, skill_id FROM user_skill_assessments GROUP BY user_id, skill_id HAVING COUNT(*) > 1")).all()
+        if pairs:
+>           raise RuntimeError("Duplicate assessments found; migration stopped without deleting records. Back up and obtain operator approval for a merge plan.")
+E           RuntimeError: Duplicate assessments found; migration stopped without deleting records. Back up and obtain operator approval for a merge plan.
+
+backend/app/core/migrations.py:43: RuntimeError
+___________________ test_internal_links_point_at_real_routes ___________________
+
+    def test_internal_links_point_at_real_routes():
+        routes = set(re.findall(r'path="(/[\w-]+)"', _fe("App.tsx"))) | {"/login", "/register", "/"}
+        bad = set()
+        for f in FE.rglob("*.tsx"):
+            for m in re.finditer(r'(?:to=|nav\()["`{(]*"?`?(/[\w-]+)', f.read_text()):
+                if m.group(1) not in routes:
+                    bad.add((f.name, m.group(1)))
+>       assert not bad, bad
+E       AssertionError: {('Login.tsx', '/account')}
+E       assert not {('Login.tsx', '/account')}
+
+tests/test_isolation_static.py:245: AssertionError
+=============================== warnings summary ===============================
+../../../../../usr/local/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_api_modules.py: 38 warnings
+tests/test_auth.py: 9 warnings
+tests/test_intelligence.py: 7 warnings
+tests/test_multi_user.py: 48 warnings
+tests/test_profile.py: 11 warnings
+  /usr/local/lib/python3.13/site-packages/jwt/api_jwt.py:149: InsecureKeyLengthWarning: The HMAC key is 16 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_api_modules.py: 177 warnings
+tests/test_auth.py: 7 warnings
+tests/test_intelligence.py: 38 warnings
+tests/test_multi_user.py: 206 warnings
+tests/test_profile.py: 18 warnings
+  /usr/local/lib/python3.13/site-packages/jwt/api_jwt.py:370: InsecureKeyLengthWarning: The HMAC key is 16 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    decoded = self.decode_complete(
+
+tests/test_multi_user.py::test_forged_and_foreign_tokens
+  /usr/local/lib/python3.13/site-packages/jwt/api_jwt.py:149: InsecureKeyLengthWarning: The HMAC key is 12 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_profile.py::test_photo_rejects_oversize
+  /usr/local/lib/python3.13/site-packages/fastapi/routing.py:372: StarletteDeprecationWarning: 'HTTP_413_REQUEST_ENTITY_TOO_LARGE' is deprecated. Use 'HTTP_413_CONTENT_TOO_LARGE' instead.
+    return await dependant.call(**values)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_intelligence.py::test_migration_upgrades_an_old_database_without_losing_data
+FAILED tests/test_isolation_static.py::test_internal_links_point_at_real_routes
+2 failed, 207 passed, 562 warnings in 23.50s

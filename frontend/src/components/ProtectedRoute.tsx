@@ -1,0 +1,10 @@
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { useAuth } from "../store/auth";
+
+export default function ProtectedRoute() {
+  const { user, loading } = useAuth();
+  const loc = useLocation();
+  if (loading) return <p className="p-8 text-ink-soft" role="status">Loading…</p>;
+  if (!user) return <Navigate to="/login" replace state={{ from: loc.pathname }} />;
+  return <Outlet />;
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "check": "normal motion anchor reaches workflow",
+    "pass": true
+  },
+  {
+    "check": "normal motion does not block CTA",
+    "pass": true
+  },
+  {
+    "check": "normal motion graph remains interactive",
+    "pass": true
+  },
+  {
+    "check": "runtime reduced-motion change disables animation",
+    "pass": true
+  },
+  {
+    "check": "authorized admin table light",
+    "pass": true
+  },
+  {
+    "check": "authorized admin table dark",
+    "pass": true
+  }
+]

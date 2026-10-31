@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: skillgraph
+      POSTGRES_PASSWORD: skillgraph
+      POSTGRES_DB: skillgraph
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U skillgraph"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://skillgraph:skillgraph@db:5432/skillgraph
+    depends_on:
+      db: { condition: service_healthy }
+    ports: ["8000:8000"]
+    volumes: [uploads:/srv/backend/uploads]
+
+  frontend:
+    build: ./frontend
+    environment:
+      # The browser calls same-origin /api/...; Vite (see frontend/vite.config.ts) proxies
+      # server-side to the backend service. This works from any browser host, unlike the old
+      # VITE_API_URL=http://localhost:8000, which pointed visitors' browsers at their own machine.
+      VITE_API_PROXY: http://backend:8000
+    ports: ["5173:5173"]
+    depends_on: [backend]
+
+volumes:
+  pgdata:
+  uploads:
